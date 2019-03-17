@@ -1,0 +1,17 @@
+# Logs
+*.log
+yarn-error.log*
+
+# Dependency directories
+node_modules
+
+# dotenv environment variables file
+.env.example
+.env
+
+# parcel-bundler cache
+.cache
+
+# parcel-bundler build output
+dist
+
