@@ -6,7 +6,6 @@ yarn-error.log*
 node_modules
 
 # dotenv environment variables file
-.env.example
 .env
 
 # parcel-bundler cache
