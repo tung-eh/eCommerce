@@ -11,7 +11,6 @@ router.get('/', async (ctx, next) => {
 });
 
 router.post('/', async (ctx, next) => {
-  console.log(ctx.request.body)
   const [err, category] = await to(new Category(ctx.request.body).save());
   if (err) ctx.throw(422);
   ctx.status = 201;
