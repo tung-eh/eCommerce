@@ -16,7 +16,7 @@ passport.use(
   new LocalStrategy(
     {usernameField: 'email', passwordField: 'password'},
     async (email, password, done) => {
-      const [err, user] = await to(User.findOne({email}));
+      const [err, user] = await to(User.findOne({email}).select('+password'));
       if (err || !user) {
         done(err, user);
       } else {

@@ -23,9 +23,17 @@ router.post('/login', async (ctx, next) => {
       ctx.body = {success: false};
     } else {
       ctx.login(user);
-      ctx.body = {success: true};
+      ctx.body = user;
     }
   })(ctx, next);
+});
+
+router.get('/auth', async (ctx, next) => {
+  if (ctx.isAuthenticated()) {
+    ctx.body = ctx.state.user;
+  } else {
+    ctx.throw(401);
+  }
 });
 
 router.post('/logout', async (ctx, next) => {
