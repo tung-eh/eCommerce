@@ -2,31 +2,22 @@ import {Link, navigate} from '@reach/router';
 import React, {useContext} from 'react';
 
 import {AuthContext} from '../AuthProvider';
+import {useFetch} from '../../hooks';
 
 const AuthNav = () => {
   const {authInfo, updateAuthInfo} = useContext(AuthContext);
-
-  const handleClickLogout = () => {
-    fetch('/api/logout', {
-      method: 'POST',
-    })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Something went wrong ...');
-        }
-      })
-      .then(data => {
-        alert('Logged out successfully');
-        updateAuthInfo(null);
-        navigate('/login');
-      })
-      .catch(error => console.log(error));
-  };
+  const {triggerFetch} = useFetch({
+    url: '/api/logout',
+    method: 'POST',
+    successCb: data => {
+      alert('Logged out successfully');
+      updateAuthInfo(null);
+      navigate('/login');
+    },
+  });
 
   return authInfo ? (
-    <a href="#" onClick={handleClickLogout}>
+    <a href="#" onClick={triggerFetch}>
       Logout
     </a>
   ) : (

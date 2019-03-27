@@ -11,7 +11,8 @@
     "client-build": "parcel build ./client/index.html",
     "server-watch": "nodemon server/index.js",
     "dev": "concurrently --kill-others \"yarn server-watch\" \"yarn client-watch\"",
-    "start": "yarn client-build && node server/index.js"
+    "start": "yarn client-build && node server/index.js",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
@@ -28,10 +29,13 @@
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "concurrently": "^4.1.0",
+    "jest": "^24.5.0",
     "nodemon": "^1.18.6",
     "parcel-bundler": "^1.12.2"
   }
