@@ -8,7 +8,7 @@ const env =
     ? 'development'
     : process.env.NODE_ENV;
 
-const port = process.env.APP_PORT || 2206;
+const port = process.env.PORT || 2206;
 
 const database = {
   host: process.env.DB_HOST,
