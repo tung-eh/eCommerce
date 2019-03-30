@@ -1,5 +1,7 @@
 import path from 'path';
-import {} from 'dotenv/config';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const env =
   ['test', 'production', 'development', 'staging'].indexOf(
