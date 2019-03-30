@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import {database} from './config';
+import {dbUri} from './config';
 
 mongoose
   .connect(
-    `mongodb://${database.host}:${database.port}/${database.name}`,
+    dbUri,
     {useNewUrlParser: true},
   )
   .then(() => console.log('Connect database successfully'))

@@ -10,10 +10,6 @@ const env =
 
 const port = process.env.PORT || 2206;
 
-const database = {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  name: process.env.DB_NAME,
-};
+const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/eCommerce';
 
-export {env, port, database};
+export {env, port, dbUri};
