@@ -96,7 +96,7 @@ const Navbar = ({
         <Icon
           name={openDrawerState ? 'times' : 'bars'}
           color={colors.ufoGreen}
-          style={{zIndex: 1}}
+          style={{zIndex: 11}}
           onClick={() => setOpenDrawerState(open => !open)}
         />
       </Bar>

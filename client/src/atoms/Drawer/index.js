@@ -9,6 +9,7 @@ const Drawer = styled.div`
   ${props => `${props.position}: 0;`};
   transition: 0.5s;
   overflow: hidden;
+  z-index: 10;
 `;
 
 export default Drawer;
