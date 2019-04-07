@@ -1,46 +1,27 @@
 import styled from 'styled-components';
 import React from 'react';
-import {Link, Location} from '@reach/router';
+import {Link, Location, navigate} from '@reach/router';
+import {Navbar} from '../../molecules';
 
 import logo from '../../../assets/images/logo.png';
 
-const StyledHeader = styled.div`
-  display: flex;
-  padding: 0px;
-  background-color: #43d580;
-  height: 60px;
-`;
-
-const StyledMenu = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: ${props =>
-    ({left: 'flex-end', right: 'flex-start'}[props.align])};
-  flex: 1;
-`;
-
-const LogoLink = styled(Link)`
-  height: 100%;
-  display: flex;
-`;
+const NAVS = {
+  left: [{title: 'Home', key: '/'}, {title: 'Products', key: '/products'}],
+  right: [{title: 'About', key: '/about'}, {title: 'Sample', key: '/sample'}],
+};
 
 const Navigator = () => {
   return (
     <Location>
       {({location}) => (
-        <StyledHeader>
-          <StyledMenu align="left">
-            <Link to="/">Home</Link>
-            <Link to="products">Products</Link>
-          </StyledMenu>
-          <LogoLink to="">
-            <img src={logo} style={{height: '100%'}} />
-          </LogoLink>
-          <StyledMenu align="right">
-            <Link to="about">About</Link>
-            <Link to="sample">Sample</Link>
-          </StyledMenu>
-        </StyledHeader>
+        <Navbar
+          leftNavs={NAVS.left}
+          rightNavs={NAVS.right}
+          selectedKeys={[location.pathname]}
+          onSelectKey={key => navigate(key)}
+          logo={<img src={logo} width={50} style={{margin: '-10px 0'}} />}
+          onClickLogo={() => navigate('/')}
+        />
       )}
     </Location>
   );
