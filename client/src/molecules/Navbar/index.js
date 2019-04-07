@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {Icon, Drawer} from '../../atoms';
+import {colors, breakpoints} from '../../constants';
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #f5f8fa;
-  border-bottom: 1px solid #eaf0f6;
-  box-shadow: 0 1px 2px #eaf0f6;
+  background-color: ${colors.mintCream};
+  border-bottom: 1px solid ${colors.mintCreamDark};
+  box-shadow: 0 1px 2px ${colors.mintCreamDark};
   position: relative;
 `;
 
@@ -17,7 +18,7 @@ const Navs = styled.div`
   justify-content: ${props =>
     ({left: 'flex-end', right: 'flex-start'}[props.align])};
   flex: 1;
-  @media (max-width: 480px) {
+  @media (max-width: ${breakpoints.mobileMax}px) {
     display: none;
   }
 `;
@@ -29,28 +30,27 @@ const Nav = styled.div`
   align-items: center;
   padding: 20px 30px;
   cursor: pointer;
-  color: #43d580;
+  color: ${colors.ufoGreen};
   font-weight: 500;
   ${props =>
     props.isSelected
       ? `
-      background-color: #E8F1F2;
-      border-bottom: 2px solid #43d580;
+      background-color: ${colors.mintCreamDark};
+      border-bottom: 2px solid ${colors.ufoGreen};
     `
       : `
-      background-color: #F5F8FA;
+      background-color: ${colors.mintCream};
       `} :hover {
-    background-color: #36d278;
-    color: #fff;
+    background-color: ${colors.ufoGreenDark};
+    color: white;
   }
-  @media (max-width: 480px) {
+  @media (max-width: ${breakpoints.mobileMax}px) {
     padding: 10px 20px;
   }
 `;
 
 const LogoNav = styled(Nav)`
-  background-color: #43d580;
-  color: #fff;
+  background-color: ${colors.ufoGreen};
   box-shadow: 0 0 4px 1px green;
   margin-top: 1px;
 `;
@@ -60,7 +60,7 @@ const Bar = styled.div`
   position: absolute;
   right: 20px;
   display: flex;
-  @media (min-width: 481px) {
+  @media (min-width: ${breakpoints.tabletMin}px) {
     display: none;
   }
 `;
@@ -95,7 +95,7 @@ const Navbar = ({
       <Bar>
         <Icon
           name={openDrawerState ? 'times' : 'bars'}
-          color="#43D580"
+          color={colors.ufoGreen}
           style={{zIndex: 1}}
           onClick={() => setOpenDrawerState(open => !open)}
         />
@@ -104,8 +104,8 @@ const Navbar = ({
         open={openDrawerState}
         position="right"
         style={{
-          backgroundColor: '#f5f8fa',
-          boxShadow: '-1px 0 2px #eaf0f6',
+          backgroundColor: colors.mintCream,
+          boxShadow: `-1px 0 2px ${colors.mintCreamDark}`,
         }}>
         <div
           style={{

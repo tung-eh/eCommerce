@@ -20,7 +20,7 @@ const App = () => (
       <SignUp path="signup" />
     </Router>
     <div style={{textAlign: 'center'}}>
-      Simle eCommerce ©2019 Created by Tung Teng
+      Simple eCommerce ©2019 Created by Tung Teng
     </div>
   </AuthProvider>
 );
