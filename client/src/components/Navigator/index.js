@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import {Link, Location, navigate} from '@reach/router';
 import {Navbar} from '../../molecules';
+import {Icon} from '../../atoms';
 
 import logo from '../../../assets/images/logo.png';
 
@@ -19,7 +20,7 @@ const Navigator = () => {
           rightNavs={NAVS.right}
           selectedKeys={[location.pathname]}
           onSelectKey={key => navigate(key)}
-          logo={<img src={logo} width={50} style={{margin: '-10px 0'}} />}
+          logo={<Icon name="books" width={30} color="white" />}
           onClickLogo={() => navigate('/')}
         />
       )}
