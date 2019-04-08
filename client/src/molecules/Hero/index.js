@@ -3,15 +3,12 @@ import styled from 'styled-components';
 import {colors} from '../../constants';
 
 const Background = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 200px;
   min-height: 80vh;
   background-image: url("${props => props.img}");
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: 20px;
 `;
 
 const Overlay = styled.div`
@@ -23,16 +20,22 @@ const Overlay = styled.div`
 `;
 
 const ChildrenContainer = styled.div`
-  font-size: 40px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 20px;
+  position: relative;
+  font-size: 50px;
   color: white;
   z-index: 1;
 `;
 
-const Hero = ({img, children}) => (
+const Hero = ({img, children, cta, style}) => (
   <Background img={img}>
     <Overlay />
-    <ChildrenContainer>{children}</ChildrenContainer>
+    <ChildrenContainer style={style}>{children}</ChildrenContainer>
   </Background>
 );
 
