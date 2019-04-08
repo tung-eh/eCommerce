@@ -8,6 +8,7 @@ import Login from './Login';
 import Navigator from './Navigator';
 import Sample from './Sample';
 import SignUp from './SignUp';
+import {Footer} from '../molecules';
 
 const App = () => (
   <AuthProvider>
@@ -19,9 +20,7 @@ const App = () => (
       <Login path="login" />
       <SignUp path="signup" />
     </Router>
-    <div style={{textAlign: 'center'}}>
-      Simple eCommerce ©2019 Created by Tung Teng
-    </div>
+    <Footer>Simple eCommerce ©2019 Created by Tung Teng</Footer>
   </AuthProvider>
 );
 
