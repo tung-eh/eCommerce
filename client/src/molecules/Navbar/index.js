@@ -30,8 +30,9 @@ const Nav = styled.div`
   align-items: center;
   padding: 20px 30px;
   cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
   color: ${colors.ufoGreen};
-  font-weight: 500;
   ${props =>
     props.isSelected
       ? `
@@ -51,8 +52,6 @@ const Nav = styled.div`
 
 const LogoNav = styled(Nav)`
   background-color: ${colors.ufoGreen};
-  box-shadow: 0 0 4px 1px green;
-  margin-top: 1px;
 `;
 
 const Bar = styled.div`

@@ -19,7 +19,20 @@ const Navigator = () => {
           rightNavs={NAVS.right}
           selectedKeys={[location.pathname]}
           onSelectKey={key => navigate(key)}
-          logo={<Icon name="books" width={30} color="white" />}
+          logo={
+            <>
+              <Icon name="books" width={30} color="white" />
+              <span
+                style={{
+                  color: 'white',
+                  marginLeft: 10,
+                  fontSize: 18,
+                  fontFamily: `"Quarz 974"`,
+                }}>
+                TuBo
+              </span>
+            </>
+          }
           onClickLogo={() => navigate('/')}
         />
       )}
