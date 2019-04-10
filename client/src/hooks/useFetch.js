@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {getMockDataByUrl} from '../mocks';
 
 const makeQuery = obj =>
   Object.keys(obj)
@@ -15,31 +16,35 @@ const useFetch = ({
   queryObj,
   successCb = () => {},
   failCb = () => {},
+  mock = false,
 }) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState();
   const [error, setError] = useState();
 
-  const triggerFetch = () => {
-    setLoading(true);
-    fetch(getUrl(url, queryObj), {
-      method,
-      ...(dataObj
-        ? {
-            body: JSON.stringify(dataObj),
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
-        : {}),
-    })
-      .then(response => {
+  const fetchPromise = mock
+    ? Promise.resolve(getMockDataByUrl(url))
+    : fetch(getUrl(url, queryObj), {
+        method,
+        ...(dataObj
+          ? {
+              body: JSON.stringify(dataObj),
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          : {}),
+      }).then(response => {
         if (response.ok) {
           return response.json();
         } else {
           throw new Error('Something went wrong ...');
         }
-      })
+      });
+
+  const triggerFetch = () => {
+    setLoading(true);
+    fetchPromise
       .then(data => {
         setData(data);
         successCb(data);
