@@ -5,6 +5,7 @@ import {Hero} from '../../molecules';
 import {Section} from '../../atoms';
 import PopularBooks from './PopularBooks';
 import heroImg from '../../../assets/images/hero.jpg';
+import {colors} from '../../constants';
 
 const HeroButton = styled.div`
   position: absolute;
@@ -27,8 +28,24 @@ const Home = () => (
         <Icon name="down" color="white" size="lg" />
       </HeroButton>
     </Hero>
-    <Section title="Popular books">
+    <Section>
+      <div
+        style={{
+          width: '100%',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr',
+          justifyItems: 'center',
+        }}>
+        <h5>Tons of books</h5>
+        <h5>Hundreds of Authors</h5>
+        <h5>Easily Bookmarked</h5>
+      </div>
+    </Section>
+    <Section title="Popular books" style={{backgroundColor: colors.mintCream}}>
       <PopularBooks />
+    </Section>
+    <Section>
+      <div style={{height: 200}} />
     </Section>
   </>
 );

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import {colors} from '../../constants';
 
 const Background = styled.div`
-  height: 200px;
-  min-height: 80vh;
+  min-height: 500px;
+  height: 80vh;
   background-image: url("${props => props.img}");
   background-size: cover;
   background-position: center;

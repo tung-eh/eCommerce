@@ -13,8 +13,8 @@ const Title = styled.h3`
   margin: 0 0 20px 0;
 `;
 
-const Section = ({children, title}) => (
-  <Wrapper>
+const Section = ({children, title, className, style}) => (
+  <Wrapper className={className} style={style}>
     <Title>{title}</Title>
     {children}
   </Wrapper>

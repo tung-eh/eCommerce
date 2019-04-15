@@ -6,7 +6,7 @@ import {colors} from '../../constants';
 
 const Wrapper = styled(Card)`
   max-width: 240px;
-  background-color: ${colors.mintCream};
+  background-color: white;
   box-shadow: 0px 0px 1px 1px ${colors.mintCreamDark};
 `;
 
@@ -27,8 +27,8 @@ const ProductCard = ({product: {imageUrl, title, author, price}}) => (
       <h2>${price.toFixed(2)}</h2>
       <ButtonGroup
         buttons={[
-          {children: 'Detail', rounded: true},
-          {children: 'Buy', rounded: true, type: 'primary'},
+          {children: 'View detail', rounded: true},
+          {children: 'Add to cart', rounded: true, type: 'primary'},
         ]}
         style={{display: 'grid', gridTemplateColumns: '1fr 1fr', width: '100%'}}
       />
