@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styled from 'styled-components';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import {Hero} from '../../molecules';
 import {Icon, Section} from '../../atoms';
@@ -7,6 +8,8 @@ import {colors} from '../../constants';
 import Features from './Features';
 import PopularBooks from './PopularBooks';
 import heroImg from '../../../assets/images/hero.jpg';
+
+smoothscroll.polyfill();
 
 const HeroButton = styled.div`
   position: absolute;
@@ -19,26 +22,35 @@ const HeroButton = styled.div`
   cursor: pointer;
 `;
 
-const Home = () => (
-  <>
-    <Hero img={heroImg}>
-      <div>Let's travel without moving your feet</div>
-      <div>... through our books</div>
-      <HeroButton>
-        <div>Explore</div>
-        <Icon name="down" color="white" size="lg" />
-      </HeroButton>
-    </Hero>
-    <Section>
-      <Features />
-    </Section>
-    <Section title="Popular books" style={{backgroundColor: colors.mintCream}}>
-      <PopularBooks />
-    </Section>
-    <Section>
-      <div style={{height: 200}} />
-    </Section>
-  </>
-);
+const Home = () => {
+  const sectionRef = useRef(null);
+
+  return (
+    <>
+      <Hero img={heroImg}>
+        <div>Let's travel without moving your feet</div>
+        <div>... through our books</div>
+        <HeroButton
+          onClick={() =>
+            sectionRef.current.scrollIntoView({behavior: 'smooth'})
+          }>
+          <div>Explore</div>
+          <Icon name="down" color="white" size="lg" />
+        </HeroButton>
+      </Hero>
+      <Section ref={sectionRef}>
+        <Features />
+      </Section>
+      <Section
+        title="Popular books"
+        style={{backgroundColor: colors.mintCream}}>
+        <PopularBooks />
+      </Section>
+      <Section>
+        <div style={{height: 200}} />
+      </Section>
+    </>
+  );
+};
 
 export default Home;

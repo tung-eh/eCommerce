@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {Icon} from '../../atoms';
-import {colors} from '../../constants';
+import {colors, breakpoints} from '../../constants';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,6 +13,9 @@ const Wrapper = styled.div`
   padding: 30px;
   box-sizing: border-box;
   font-size: 16px;
+  @media (max-width: ${breakpoints.mobileMax}px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const FeatureWrapper = styled.div`

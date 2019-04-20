@@ -13,11 +13,11 @@ const Title = styled.h3`
   margin: 0 0 20px 0;
 `;
 
-const Section = ({children, title, className, style}) => (
-  <Wrapper className={className} style={style}>
+const Section = ({children, title, ...others}, ref) => (
+  <Wrapper {...others} ref={ref}>
     {title && <Title>{title}</Title>}
     {children}
   </Wrapper>
 );
 
-export default Section;
+export default React.forwardRef(Section);
