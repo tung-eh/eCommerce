@@ -15,7 +15,7 @@ const Title = styled.h3`
 
 const Section = ({children, title, className, style}) => (
   <Wrapper className={className} style={style}>
-    <Title>{title}</Title>
+    {title && <Title>{title}</Title>}
     {children}
   </Wrapper>
 );

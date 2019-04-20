@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Icon} from '../../atoms';
+
 import {Hero} from '../../molecules';
-import {Section} from '../../atoms';
+import {Icon, Section} from '../../atoms';
+import {colors} from '../../constants';
+import Features from './Features';
 import PopularBooks from './PopularBooks';
 import heroImg from '../../../assets/images/hero.jpg';
-import {colors} from '../../constants';
 
 const HeroButton = styled.div`
   position: absolute;
@@ -29,17 +30,7 @@ const Home = () => (
       </HeroButton>
     </Hero>
     <Section>
-      <div
-        style={{
-          width: '100%',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr 1fr',
-          justifyItems: 'center',
-        }}>
-        <h5>Tons of books</h5>
-        <h5>Hundreds of Authors</h5>
-        <h5>Easily Bookmarked</h5>
-      </div>
+      <Features />
     </Section>
     <Section title="Popular books" style={{backgroundColor: colors.mintCream}}>
       <PopularBooks />
