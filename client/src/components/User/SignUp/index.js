@@ -1,7 +1,7 @@
 import {navigate} from '@reach/router';
 import React from 'react';
 
-import {useFetch, useFormInput} from '../../hooks';
+import {useFetch, useFormInput} from '../../../hooks';
 
 const SignUp = () => {
   const [input, handleInputChange] = useFormInput({

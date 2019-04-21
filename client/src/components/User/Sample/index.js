@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 
-import {useFetch} from '../../hooks';
+import {useFetch} from '../../../hooks';
 
 const Sample = () => {
   const {data: categories, triggerFetch: fetchCategories} = useFetch({

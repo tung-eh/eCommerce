@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {Icon} from '../../atoms';
-import {colors, breakpoints} from '../../constants';
+import {Icon} from '../../../atoms';
+import {colors, breakpoints} from '../../../constants';
 
 const Wrapper = styled.div`
   width: 100%;

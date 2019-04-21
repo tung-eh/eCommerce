@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import React from 'react';
 import {Link, Location, navigate} from '@reach/router';
 
-import {Navbar} from '../../molecules';
-import {Icon} from '../../atoms';
+import {Navbar} from '../../../molecules';
+import {Icon} from '../../../atoms';
 
 const NAVS = {
   left: [{title: 'Home', key: '/'}, {title: 'Products', key: '/products'}],

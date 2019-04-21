@@ -1,8 +1,8 @@
 import {navigate} from '@reach/router';
 import React, {useContext} from 'react';
 
-import {AuthContext} from '../AuthProvider';
-import {useFormInput, useFetch} from '../../hooks';
+import {AuthContext} from '../../AuthProvider';
+import {useFormInput, useFetch} from '../../../hooks';
 
 const Login = () => {
   const [input, handleInputChange] = useFormInput({email: '', password: ''});

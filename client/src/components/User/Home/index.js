@@ -1,13 +1,14 @@
-import React, {useRef} from 'react';
-import styled from 'styled-components';
 import smoothscroll from 'smoothscroll-polyfill';
 
-import {Hero} from '../../molecules';
-import {Icon, Section} from '../../atoms';
-import {colors} from '../../constants';
+import React, {useRef} from 'react';
+import styled from 'styled-components';
+
+import {Hero} from '../../../molecules';
+import {Icon, Section} from '../../../atoms';
+import {colors} from '../../../constants';
 import Features from './Features';
 import PopularBooks from './PopularBooks';
-import heroImg from '../../../assets/images/hero.jpg';
+import heroImg from '../../../../assets/images/hero.jpg';
 
 smoothscroll.polyfill();
 
