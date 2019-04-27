@@ -27,7 +27,12 @@ const FeatureWrapper = styled.div`
 
 const FeatureItem = ({iconName, title, children}) => (
   <FeatureWrapper>
-    <Icon name={iconName} color={colors.ufoGreen} height={60} width={60} />
+    <Icon
+      name={iconName}
+      height={60}
+      width={60}
+      style={{color: colors.ufoGreen}}
+    />
     <h3 style={{margin: '30px 0'}}>{title}</h3>
     <p>{children}</p>
   </FeatureWrapper>
