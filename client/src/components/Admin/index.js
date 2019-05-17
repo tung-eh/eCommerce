@@ -1,6 +1,7 @@
 import {Router} from '@reach/router';
 import React from 'react';
 
+import Categories from './Categories';
 import Navigator from './Navigator';
 
 const Layout = ({children}) => (
@@ -11,7 +12,6 @@ const Layout = ({children}) => (
 );
 
 const Dashboard = () => 'Dashboard';
-const Categories = () => 'Categories';
 const Products = () => 'Products';
 
 const Admin = () => (

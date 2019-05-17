@@ -42,3 +42,24 @@ button {
 input {
   font-family: inherit;
 }
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+th {
+  background-color: #f5f8fa;
+  color: #3a3042;
+}
