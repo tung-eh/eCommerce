@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import {colors} from '../../constants';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../constants";
 
 const Wrapper = styled.div`
   background-color: ${colors.mintCream};
@@ -11,6 +11,6 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const Footer = ({children}) => <Wrapper>{children}</Wrapper>;
+const Footer = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Footer;

@@ -1,9 +1,9 @@
-import {Router} from '@reach/router';
-import React from 'react';
+import { Router } from "@reach/router";
+import React from "react";
 
-import Admin from './Admin';
-import AuthProvider from './AuthProvider';
-import User from './User';
+import Admin from "./Admin";
+import AuthProvider from "./AuthProvider";
+import User from "./User";
 
 const App = () => (
   <AuthProvider>

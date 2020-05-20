@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import {Card, ButtonGroup} from '../../atoms';
-import {colors} from '../../constants';
+import { Card, ButtonGroup } from "../../atoms";
+import { colors } from "../../constants";
 
 const Wrapper = styled(Card)`
   max-width: 240px;
@@ -19,7 +19,7 @@ const CardBody = styled.div`
   font-size: 14px;
 `;
 
-const ProductCard = ({product: {imageUrl, title, author, price}}) => (
+const ProductCard = ({ product: { imageUrl, title, author, price } }) => (
   <Wrapper imageUrl={imageUrl}>
     <CardBody>
       <h3>{title}</h3>
@@ -27,10 +27,14 @@ const ProductCard = ({product: {imageUrl, title, author, price}}) => (
       <h2>${price.toFixed(2)}</h2>
       <ButtonGroup
         buttons={[
-          {children: 'View detail', rounded: true},
-          {children: 'Add to cart', rounded: true, type: 'primary'},
+          { children: "View detail", rounded: true },
+          { children: "Add to cart", rounded: true, type: "primary" },
         ]}
-        style={{display: 'grid', gridTemplateColumns: '1fr 1fr', width: '100%'}}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          width: "100%",
+        }}
       />
     </CardBody>
   </Wrapper>

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import {Icon} from '../../../atoms';
-import {colors, breakpoints} from '../../../constants';
+import { Icon } from "../../../atoms";
+import { colors, breakpoints } from "../../../constants";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -25,15 +25,15 @@ const FeatureWrapper = styled.div`
   text-align: center;
 `;
 
-const FeatureItem = ({iconName, title, children}) => (
+const FeatureItem = ({ iconName, title, children }) => (
   <FeatureWrapper>
     <Icon
       name={iconName}
       height={60}
       width={60}
-      style={{color: colors.ufoGreen}}
+      style={{ color: colors.ufoGreen }}
     />
-    <h3 style={{margin: '30px 0'}}>{title}</h3>
+    <h3 style={{ margin: "30px 0" }}>{title}</h3>
     <p>{children}</p>
   </FeatureWrapper>
 );

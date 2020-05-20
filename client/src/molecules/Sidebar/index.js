@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import {Drawer, Icon} from '../../atoms';
-import {colors} from '../../constants';
+import { Drawer, Icon } from "../../atoms";
+import { colors } from "../../constants";
 
 const Nav = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const Nav = styled.div`
     background-color: ${colors.mintCreamDark};
     color: ${colors.onyx};
   }
-  ${props =>
+  ${(props) =>
     props.isSelected &&
     `
     color: gray;
@@ -43,16 +43,18 @@ const Sidebar = ({
     open
     style={{
       width,
-      backgroundColor: 'gray',
-      color: 'white',
-    }}>
+      backgroundColor: "gray",
+      color: "white",
+    }}
+  >
     <LogoWrapper onClick={onClickLogo}>{logo}</LogoWrapper>
-    {navs.map(({title, key, iconName}) => (
+    {navs.map(({ title, key, iconName }) => (
       <Nav
         key={key}
         isSelected={selectedKeys.indexOf(key) !== -1}
-        onClick={() => onSelectKey(key)}>
-        <Icon name={iconName} style={{marginRight: 10}} />
+        onClick={() => onSelectKey(key)}
+      >
+        <Icon name={iconName} style={{ marginRight: 10 }} />
         {title}
       </Nav>
     ))}

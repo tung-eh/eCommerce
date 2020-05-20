@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import {colors} from '../../constants';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../constants";
 
 const Wrapper = styled.div`
   border-radius: 5px;
@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-const Card = ({imageUrl, children, className, style}) => (
+const Card = ({ imageUrl, children, className, style }) => (
   <Wrapper className={className} style={style}>
     <img src={imageUrl} width="100%" />
     {children}

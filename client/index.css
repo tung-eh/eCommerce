@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Quarz 974';
-  src: url('/assets/fonts/quarz974/Quarz 974 Light.woff') format('woff');
+  font-family: "Quarz 974";
+  src: url("/assets/fonts/quarz974/Quarz 974 Light.woff") format("woff");
 }
 
 html,

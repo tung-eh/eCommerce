@@ -1,13 +1,13 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 
-import {useFetch} from '../../../hooks';
+import { useFetch } from "../../../hooks";
 
 const Sample = () => {
-  const {data: categories, triggerFetch: fetchCategories} = useFetch({
-    url: '/api/categories',
+  const { data: categories, triggerFetch: fetchCategories } = useFetch({
+    url: "/api/categories",
   });
-  const {data: products, triggerFetch: fetchProducts} = useFetch({
-    url: '/api/products',
+  const { data: products, triggerFetch: fetchProducts } = useFetch({
+    url: "/api/products",
   });
   useEffect(() => {
     fetchCategories();

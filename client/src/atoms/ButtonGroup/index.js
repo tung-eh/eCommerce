@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Button from '../Button';
+import React from "react";
+import styled from "styled-components";
+import Button from "../Button";
 
 const Wrapper = styled.div`
   > button {
@@ -15,9 +15,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const ButtonGroup = ({buttons, style}) => (
+const ButtonGroup = ({ buttons, style }) => (
   <Wrapper style={style}>
-    {buttons.map((button, index) => <Button key={index} {...button} ghost />)}
+    {buttons.map((button, index) => (
+      <Button key={index} {...button} ghost />
+    ))}
   </Wrapper>
 );
 

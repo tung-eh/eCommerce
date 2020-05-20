@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import {colors} from '../../constants';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../constants";
 
 const Background = styled.div`
   min-height: 500px;
   height: 80vh;
-  background-image: url("${props => props.img}");
+  background-image: url("${(props) => props.img}");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -32,7 +32,7 @@ const ChildrenContainer = styled.div`
   z-index: 1;
 `;
 
-const Hero = ({img, children, cta, style}) => (
+const Hero = ({ img, children, cta, style }) => (
   <Background img={img}>
     <Overlay />
     <ChildrenContainer style={style}>{children}</ChildrenContainer>

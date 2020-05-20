@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import {breakpoints} from '../../constants';
+import React from "react";
+import styled from "styled-components";
+import { breakpoints } from "../../constants";
 
 const GridContainer = styled.div`
   display: grid;
@@ -15,6 +15,6 @@ const GridContainer = styled.div`
   }
 `;
 
-const Grid = ({children}) => <GridContainer>{children}</GridContainer>;
+const Grid = ({ children }) => <GridContainer>{children}</GridContainer>;
 
 export default Grid;

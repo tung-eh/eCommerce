@@ -1,18 +1,18 @@
-import {Router} from '@reach/router';
-import React from 'react';
+import { Router } from "@reach/router";
+import React from "react";
 
-import Categories from './Categories';
-import Navigator from './Navigator';
+import Categories from "./Categories";
+import Navigator from "./Navigator";
 
-const Layout = ({children}) => (
+const Layout = ({ children }) => (
   <>
     <Navigator width={250} />
-    <main style={{marginLeft: 250, padding: 10}}>{children}</main>
+    <main style={{ marginLeft: 250, padding: 10 }}>{children}</main>
   </>
 );
 
-const Dashboard = () => 'Dashboard';
-const Products = () => 'Products';
+const Dashboard = () => "Dashboard";
+const Products = () => "Products";
 
 const Admin = () => (
   <Layout>

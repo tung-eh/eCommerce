@@ -1,23 +1,23 @@
-import {navigate} from '@reach/router';
-import React from 'react';
+import { navigate } from "@reach/router";
+import React from "react";
 
-import {useFetch, useFormInput} from '../../../hooks';
+import { useFetch, useFormInput } from "../../../hooks";
 
 const SignUp = () => {
   const [input, handleInputChange] = useFormInput({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
-  const {triggerFetch} = useFetch({
-    url: '/api/signup',
-    method: 'POST',
+  const { triggerFetch } = useFetch({
+    url: "/api/signup",
+    method: "POST",
     dataObj: input,
-    successCb: data => {
+    successCb: (data) => {
       alert(
-        "Signed up successfully. Let's login to the account you've just created",
+        "Signed up successfully. Let's login to the account you've just created"
       );
-      navigate('/login');
+      navigate("/login");
     },
   });
 
@@ -27,7 +27,7 @@ const SignUp = () => {
         <input
           placeholder="Your name"
           value={input.name}
-          onChange={handleInputChange('name')}
+          onChange={handleInputChange("name")}
         />
       </div>
       <div>
@@ -35,7 +35,7 @@ const SignUp = () => {
           type="email"
           placeholder="Your email"
           value={input.email}
-          onChange={handleInputChange('email')}
+          onChange={handleInputChange("email")}
         />
       </div>
       <div>
@@ -43,7 +43,7 @@ const SignUp = () => {
           type="password"
           placeholder="Your password"
           value={input.password}
-          onChange={handleInputChange('password')}
+          onChange={handleInputChange("password")}
         />
       </div>
       <button onClick={triggerFetch}>Sign Up</button>

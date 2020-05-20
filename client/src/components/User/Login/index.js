@@ -1,20 +1,20 @@
-import {navigate} from '@reach/router';
-import React, {useContext} from 'react';
+import { navigate } from "@reach/router";
+import React, { useContext } from "react";
 
-import {AuthContext} from '../../AuthProvider';
-import {useFormInput, useFetch} from '../../../hooks';
+import { AuthContext } from "../../AuthProvider";
+import { useFormInput, useFetch } from "../../../hooks";
 
 const Login = () => {
-  const [input, handleInputChange] = useFormInput({email: '', password: ''});
-  const {updateAuthInfo} = useContext(AuthContext);
-  const {triggerFetch} = useFetch({
-    url: '/api/login',
-    method: 'POST',
+  const [input, handleInputChange] = useFormInput({ email: "", password: "" });
+  const { updateAuthInfo } = useContext(AuthContext);
+  const { triggerFetch } = useFetch({
+    url: "/api/login",
+    method: "POST",
     dataObj: input,
-    successCb: data => {
-      alert('Logged in successfully');
+    successCb: (data) => {
+      alert("Logged in successfully");
       updateAuthInfo(data);
-      navigate('/');
+      navigate("/");
     },
   });
 
@@ -24,13 +24,13 @@ const Login = () => {
         type="email"
         placeholder="Your email"
         value={input.email}
-        onChange={handleInputChange('email')}
+        onChange={handleInputChange("email")}
       />
       <input
         type="password"
         placeholder="Your password"
         value={input.password}
-        onChange={handleInputChange('password')}
+        onChange={handleInputChange("password")}
       />
       <button onClick={triggerFetch}>Login</button>
     </div>

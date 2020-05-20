@@ -1,14 +1,14 @@
-import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from "smoothscroll-polyfill";
 
-import React, {useRef} from 'react';
-import styled from 'styled-components';
+import React, { useRef } from "react";
+import styled from "styled-components";
 
-import {Hero} from '../../../molecules';
-import {Icon, Section} from '../../../atoms';
-import {colors} from '../../../constants';
-import Features from './Features';
-import PopularBooks from './PopularBooks';
-import heroImg from '../../../../assets/images/hero.jpg';
+import { Hero } from "../../../molecules";
+import { Icon, Section } from "../../../atoms";
+import { colors } from "../../../constants";
+import Features from "./Features";
+import PopularBooks from "./PopularBooks";
+import heroImg from "../../../../assets/images/hero.jpg";
 
 smoothscroll.polyfill();
 
@@ -33,8 +33,9 @@ const Home = () => {
         <div>... through our books</div>
         <HeroButton
           onClick={() =>
-            sectionRef.current.scrollIntoView({behavior: 'smooth'})
-          }>
+            sectionRef.current.scrollIntoView({ behavior: "smooth" })
+          }
+        >
           <div>Explore</div>
           <Icon name="down" color="white" size="lg" />
         </HeroButton>
@@ -44,11 +45,12 @@ const Home = () => {
       </Section>
       <Section
         title="Popular books"
-        style={{backgroundColor: colors.mintCream}}>
+        style={{ backgroundColor: colors.mintCream }}
+      >
         <PopularBooks />
       </Section>
       <Section>
-        <div style={{height: 200}} />
+        <div style={{ height: 200 }} />
       </Section>
     </>
   );
