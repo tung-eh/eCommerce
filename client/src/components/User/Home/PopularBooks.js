@@ -1,15 +1,11 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import React from "react";
 
-import { useFetch } from "../../../hooks";
 import { Grid } from "../../../atoms";
 import { ProductCard } from "../../../molecules";
+import { useFetchOnMount } from "../../../hooks/useFetch";
 
 const PopularBooks = () => {
-  const { data, triggerFetch } = useFetch({ url: "/api/products", mock: true });
-  useEffect(() => {
-    triggerFetch();
-  }, []);
+  const { data } = useFetchOnMount("/api/products", { mock: true });
 
   return data ? (
     <Grid>

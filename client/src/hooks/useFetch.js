@@ -1,5 +1,8 @@
 import { propOr } from "ramda";
+
 import { useCallback, useEffect, useReducer } from "react";
+
+import { getMockDataByUrl } from "../mocks";
 
 const initialState = {
   loading: false,
@@ -22,9 +25,6 @@ const reducer = (state, action) => {
   }
 };
 
-const getCompleteUrl = (url) =>
-  `${url[0] === "/" ? process.env.REACT_APP_BACKEND_DOMAIN : ""}${url}`;
-
 export const useFetcher = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -32,17 +32,21 @@ export const useFetcher = () => {
 
   const triggerFetch = useCallback((url, opts = {}) => {
     if (!url) return Promise.resolve();
+
+    const fetchPromise = opts.mock
+      ? Promise.resolve(getMockDataByUrl(url))
+      : fetch(url, opts).then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            const error = new Error("API returns errors.");
+            error.status = response.status;
+            throw error;
+          }
+        });
+
     dispatch({ type: FETCH_START });
-    return fetch(url, opts)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          const error = new Error("API returns errors.");
-          error.status = response.status;
-          throw error;
-        }
-      })
+    return fetchPromise
       .then((data) => {
         dispatch({
           type: FETCH_SUCCESS,

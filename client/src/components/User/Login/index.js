@@ -2,13 +2,13 @@ import { navigate } from "@reach/router";
 import React, { useContext } from "react";
 
 import { AuthContext } from "../../AuthProvider";
-import { useFormInput, useFetch } from "../../../hooks";
+import { useFetch } from "../../../hooks/useFetch";
+import useFormInput from "../../../hooks/useFormInput";
 
 const Login = () => {
   const [input, handleInputChange] = useFormInput({ email: "", password: "" });
   const { updateAuthInfo } = useContext(AuthContext);
-  const { triggerFetch } = useFetch({
-    url: "/api/login",
+  const { triggerFetch } = useFetch("/api/login", {
     method: "POST",
     dataObj: input,
     successCb: (data) => {

@@ -1,7 +1,8 @@
 import { navigate } from "@reach/router";
 import React from "react";
 
-import { useFetch, useFormInput } from "../../../hooks";
+import { useFetch } from "../../../hooks/useFetch";
+import useFormInput from "../../../hooks/useFormInput";
 
 const SignUp = () => {
   const [input, handleInputChange] = useFormInput({
@@ -9,8 +10,7 @@ const SignUp = () => {
     email: "",
     password: "",
   });
-  const { triggerFetch } = useFetch({
-    url: "/api/signup",
+  const { triggerFetch } = useFetch("/api/signup", {
     method: "POST",
     dataObj: input,
     successCb: (data) => {
