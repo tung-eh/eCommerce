@@ -18,7 +18,7 @@ const Admin = () => (
   <Layout>
     <Router>
       <Dashboard path="/" />
-      <Categories path="/categories" />
+      <Categories path="/categories/*" />
       <Products path="/products" />
     </Router>
   </Layout>
