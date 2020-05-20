@@ -27,8 +27,7 @@
     "koa-static": "^5.0.0",
     "mongoose": "^5.9.15",
     "passport-local": "^1.0.0",
-    "ramda": "^0.27.0",
-    "smoothscroll-polyfill": "^0.4.4"
+    "ramda": "^0.27.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -43,7 +42,7 @@
     "prettier": "^2.0.5",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "smoothscroll": "^0.4.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^4.2.0"
   }
 }
