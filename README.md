@@ -1,4 +1,5 @@
 # eCommerce
+Simple eCommerce site. Demo: https://tungteng-store.herokuapp.com (User page), https://tungteng-store.herokuapp.com/admin (Admin page)
 
 ### Tech stack
 - Backend: Koa + mongoose + MongoDB
